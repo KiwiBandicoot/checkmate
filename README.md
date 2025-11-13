@@ -1,16 +1,20 @@
-Typescript and Rust App To better manage time!
+Typescript and Rust App To read the weather in Auckland!
 
 Proposed plan:
-
+```yaml
 checkmate/
 ├─ backend/
 │  ├─ Cargo.toml
 │  └─ src/
-│     └─ main.rs           # Rust backend server
+│     ├─ main.rs
+│     └─ pages.rs
 ├─ frontend/
 │  ├─ package.json
 │  ├─ tsconfig.json
+│  ├─ index.tsx
 │  └─ src/
-│     ├─ App.tsx           # main React component
-│     ├─ index.tsx         # entry point
-│     └─ types.ts          # TypeScript types (e.g., Task interface)
+│     ├─ App.tsx 
+│     ├─ main.tsx
+│     └─ types.ts
+│     └─ styles.ts
+```
