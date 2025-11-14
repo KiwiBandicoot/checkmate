@@ -1,31 +1,34 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import "./styles.css";
 
-interface Weather {
+interface WeatherData {
   temperature: number;
   description: string;
   icon: string;
 }
 
-const App: React.FC = () => {
-  const [weather, setWeather] = useState<Weather | null>(null);
+function App() {
+  const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchWeather = async () => {
       try {
-        const response = await fetch(import.meta.env.VITE_API_URL);
+        const response = await fetch("/weather");
+        // Check if response is ok
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error(`Backend returned status ${response.status}`);
         }
-        const data = await response.json();
-        setWeather({
-          temperature: data.temperature,
-          description: data.description,
-          icon: data.icon,
-        });
+
+        // Parse JSON safely
+        const data = await response.json() as WeatherData;
+
+        // Set weather state
+        setWeather(data);
       } catch (err: any) {
-        setError(err.message);
+        console.error("Fetch error:", err);
+        setError(err.message || "Failed to fetch weather");
       } finally {
         setLoading(false);
       }
@@ -34,23 +37,24 @@ const App: React.FC = () => {
     fetchWeather();
   }, []);
 
-  if (loading) return <div>Loading Auckland weather...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (loading) return <div className="center">Loading weather...</div>;
+  if (error) return <div className="center">Error: {error}</div>;
+  if (!weather) return <div className="center">No weather data</div>;
 
   return (
-    <div style={{ textAlign: "center", fontFamily: "sans-serif" }}>
-      <h1>Auckland Weather</h1>
-      <p>
-        <strong>{weather?.temperature}°C</strong> – {weather?.description}
-      </p>
-      {weather?.icon && (
+    <div className="container">
+      <div className="card">
+        <h1 className="title">Auckland Weather</h1>
         <img
-          src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`}
+          src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
           alt={weather.description}
+          className="icon"
         />
-      )}
+        <p className="temperature">{weather.temperature}°C</p>
+        <p className="description">{weather.description}</p>
+      </div>
     </div>
   );
-};
+}
 
 export default App;

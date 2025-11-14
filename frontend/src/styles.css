@@ -1,21 +1,53 @@
-body {
-  font-family: system-ui, sans-serif;
-  background-color: #f0f4f8;
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+  background-color: #e0f7fa;
+}
+
+.container {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding: 2rem;
+  align-items: center;
+  height: 100vh;
 }
 
-.app-container {
-  background: white;
+.card {
+  background-color: #ffffff;
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  min-width: 220px;
 }
 
-img {
+.title {
+  margin-bottom: 1rem;
+}
+
+.icon {
   width: 100px;
   height: 100px;
+}
+
+.temperature {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+.description {
+  text-transform: capitalize;
+  color: #555;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.2rem;
+}
+.error {
+  color: red;
 }
