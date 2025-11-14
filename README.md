@@ -1,4 +1,4 @@
-Typescript and Rust App To read the weather in Auckland!
+Typescript To read the weather in Auckland!
 
 Proposed plan:
 ```yaml
@@ -6,15 +6,13 @@ checkmate/
 ├─ backend/
 │  ├─ Cargo.toml
 │  └─ src/
-│     ├─ main.rs
-│     └─ pages.rs
+│     └─ ubdex.tsx
 ├─ frontend/
 │  ├─ package.json
 │  ├─ tsconfig.json
-│  ├─ index.tsx
+│  ├─ index.html
 │  └─ src/
 │     ├─ App.tsx 
 │     ├─ main.tsx
-│     └─ types.ts
 │     └─ styles.ts
 ```
