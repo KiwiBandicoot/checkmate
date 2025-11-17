@@ -15,4 +15,8 @@ checkmate/
 │     ├─ App.tsx 
 │     ├─ main.tsx
 │     └─ styles.ts
+├─ Electron/
+│  |─ tsconfig.json 
+│  ├─ package.json
+│  └─ src/ --> TBC
 ```
