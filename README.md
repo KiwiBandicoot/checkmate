@@ -20,6 +20,7 @@ checkmate/
 │  └─ src/
 │     ├─ App.tsx 
 │     ├─ main.tsx
+│     ├─ types.tsx
 │     └─ styles.ts
 ├─ Electron/ <--To Be Confirmed?
 │  └─ src/ --> TBC
