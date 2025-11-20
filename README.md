@@ -1,12 +1,18 @@
-Typescript To read the weather in Auckland!
+Typescript App To read the weather in Auckland!
 
 Proposed plan:
 ```yaml
 checkmate/
 ├─ backend/
-│  ├─ Cargo.toml
+│  ├─ package.json
+│  ├─ tsconfig.json
 │  └─ src/
-│     └─ ubdex.tsx
+│     ├─ services/
+│     │  └─ weatherService.ts
+│     ├─ utils/
+│     │  ├─ weatherCodes.ts
+│     │  └─ WeatherIcons.ts
+│     └─ index.ts
 ├─ frontend/
 │  ├─ package.json
 │  ├─ tsconfig.json
@@ -15,8 +21,6 @@ checkmate/
 │     ├─ App.tsx 
 │     ├─ main.tsx
 │     └─ styles.ts
-├─ Electron/
-│  |─ tsconfig.json 
-│  ├─ package.json
+├─ Electron/ <--To Be Confirmed?
 │  └─ src/ --> TBC
 ```
