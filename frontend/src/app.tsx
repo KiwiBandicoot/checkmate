@@ -5,6 +5,18 @@ interface WeatherData {
   temperature: number;
   description: string;
   icon: string;
+  time: string;
+}
+
+function formatTime(dateString: string): string {
+  const date = new Date(dateString);
+  return date.toLocaleString(undefined, {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 }
 
 function App() {
@@ -52,6 +64,7 @@ function App() {
         />
         <p className="temperature">{weather.temperature}°C</p>
         <p className="description">{weather.description}</p>
+        <p className="time">{weather.time}</p>
       </div>
     </div>
   );

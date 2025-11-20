@@ -13,6 +13,16 @@ export async function getAucklandWeather() {
 
   const current = data.current_weather;
 
+  const aucklandTime = new Date(current.time + "Z").toLocaleString("en-NZ", {
+    timeZone: "Pacific/Auckland",
+    hour12: false,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+});
+
   return {
     temperature: current.temperature,
     wind_speed: current.windspeed,
@@ -20,6 +30,6 @@ export async function getAucklandWeather() {
     weather_code: current.weathercode,
     description: mapWeatherCode(current.weathercode),
     icon: mapWeatherIcon(current.weathercode),
-    time: current.time,
+    time: aucklandTime,
   };
 }
