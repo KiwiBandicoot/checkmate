@@ -1,12 +1,15 @@
 ```yaml
-Typescript App To read the weather in Auckland!
-
-Made it to run local host. Looking to upgrade it to an electron app so it can be used locally.
+Description:
+[
+    -Typscript App to check Weather In Aucklnad
+    -Looking to make into a fully functioning Gui Application
+]
 ```
 
 ```yaml
 Future Features:
-[   In Progress/
+[
+    In Progress/
     ├─ Full stack wrapped in Electron
     ├─ Ability to check for Internet Connection
     ├─ Fully Functioning Electron Gui
@@ -16,7 +19,8 @@ Future Features:
 
 ```yaml
 Architecture:
-[   Checkmate/
+[   
+    Checkmate/
     ├─ backend/
     │  ├─ package.json
     │  ├─ tsconfig.json
