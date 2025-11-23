@@ -1,6 +1,8 @@
+```yaml
 Typescript App To read the weather in Auckland!
 
 Made it to run local host. Looking to upgrade it to an electron app so it can be used locally.
+```
 
 ```yaml
 Features to add/
