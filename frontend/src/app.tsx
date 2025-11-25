@@ -28,15 +28,10 @@ function App() {
     const fetchWeather = async () => {
       try {
         const response = await fetch("/weather");
-        // Check if response is ok
         if (!response.ok) {
           throw new Error(`Backend returned status ${response.status}`);
         }
-
-        // Parse JSON safely
         const data = await response.json() as WeatherData;
-
-        // Set weather state
         setWeather(data);
       } catch (err: any) {
         console.error("Fetch error:", err);
