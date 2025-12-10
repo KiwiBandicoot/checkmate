@@ -1,6 +1,3 @@
-// src/utils/weatherIcons.ts
-
-// Maps Open-Meteo weather codes → OpenWeatherMap icon codes
 export function mapWeatherIcon(code: number): string {
   const icons: Record<number, string> = {
     0: "01d", // Clear sky
